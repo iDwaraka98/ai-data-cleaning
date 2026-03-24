@@ -8,11 +8,13 @@
 
 ## Problem Statement
 
-Real-world retail datasets suffer from missing values, typographical errors, format
-inconsistencies, logical mismatches, and outliers. Traditional rule-based methods
-cannot handle errors that require contextual understanding. This project builds a
-complete AI-driven pipeline using GPT-4 to automatically detect and correct these
-errors, validated by a multi-layer confidence scoring system.
+Data quality is a fundamental requirement for reliable data analysis and decision-making. However, real-world datasets often contain inconsistencies such as missing values, duplicates, formatting errors, and outliers, which can negatively impact analytical outcomes.
+
+Traditional data cleaning approaches are primarily rule-based and require significant manual effort and domain knowledge. These methods are often limited in handling complex or context-dependent errors and may not scale efficiently with increasing data volume.
+
+This study addresses the challenge of automating the data cleaning process by proposing an AI-based system capable of detecting and correcting multiple types of data quality issues. The system aims to enhance data reliability while reducing manual intervention.
+
+Furthermore, the effectiveness of the proposed approach is evaluated through comparison with a conventional rule-based method to assess its performance and practical applicability.
 
 ---
 
@@ -48,93 +50,31 @@ ai_data_cleaning/
 
 ---
 
-## Setup Instructions
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/YOUR_USERNAME/ai_data_cleaning.git
-cd ai_data_cleaning
-```
-
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Add Your OpenAI API Key
-Create a `.env` file in the root directory:
-```
-OPENAI_API_KEY=your_openai_api_key_here
-```
->  Never commit your `.env` file. It is already listed in `.gitignore`.
-
-### 4. Add Your Dataset
-Place your CSV file in the `data/` folder and name it `data_sales.csv`.
-
-### 5. Run the Pipeline
-```bash
-python pipeline.py
-```
-
-### 6. Run Without OpenAI (Rule-Based Baseline Only)
-```bash
-python baseline.py
-```
-
-### 7. Run Evaluation & Comparison
-```bash
-python evaluate.py
-```
-
----
 
 ## Features
 
-| Feature | Description |
-|---|---|
-|  Error Detection | Missing values, typos, format issues, duplicates, logical errors, outliers |
-|  LLM Correction | GPT-4 with zero-shot, few-shot, chain-of-thought, and RAG strategies |
-|  Validation | 3-layer validation: format, logical consistency, statistical plausibility |
-|  Confidence Scoring | Auto-apply ≥0.80, flag 0.50–0.79, human review <0.50 |
-|  Evaluation | Precision, Recall, F1 vs rule-based baseline |
-|  Explainability | SHAP analysis of correction reliability |
+Automated detection of multiple data quality issues, including missing values, duplicates, and inconsistencies
+AI-based correction mechanism for intelligent data cleaning
+Multi-layer validation to ensure reliability of corrections
+Comparative analysis with traditional rule-based methods
+Generation of evaluation metrics and visual insights
+Modular system design for scalability and maintainability
 
 ---
 
-##  Dataset Columns
+##  Dataset Description
 
-| Column | Type | Notes |
-|---|---|---|
-| Retailer | Categorical | 6 unique retailers |
-| Retailer ID | Integer | |
-| Invoice Date | Date | MM/DD/YYYY format |
-| Region | Categorical | 5 US regions |
-| State | Categorical | 50 states |
-| City | Categorical | 52 cities |
-| Product | Categorical | 7 product types (contains typo) |
-| Price per Unit | String/Float | Contains $ symbol and spaces |
-| Units Sold | String/Int | May contain commas |
-| Total Sales | String/Float | Contains $, commas |
-| Operating Profit | String/Float | Contains $, commas |
-| Sales Method | Categorical | Online / Outlet / In-store |
+Transaction ID – Unique identifier for each transaction
+Date – Transaction date
+Customer ID – Identifier for customers
+Product Category – Type of product purchased
+Quantity – Number of items sold
+Price – Unit price of the product
+Total Sales – Total transaction value
+Payment Method – Mode of payment
+Store Location – Location of the transaction
 
 ---
-
-##  Running on Google Colab
-
-```python
-# Cell 1: Clone and setup
-!git clone https://github.com/YOUR_USERNAME/ai_data_cleaning.git
-%cd ai_data_cleaning
-!pip install -r requirements.txt
-
-# Cell 2: Set API key
-import os
-os.environ["OPENAI_API_KEY"] = "your_key_here"
-
-# Cell 3: Run pipeline
-!python pipeline.py
-```
 
 ---
 
