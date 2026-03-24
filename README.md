@@ -1,4 +1,4 @@
-# 🤖 Leveraging Generative AI for Automated Data Cleaning & Error Correction
+# Leveraging Generative AI for Automated Data Cleaning & Error Correction
 
 **Author:** Dwarakamai Illipilla  
 **Degree:** MSc Data Science  
@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Problem Statement
+## Problem Statement
 
 Real-world retail datasets suffer from missing values, typographical errors, format
 inconsistencies, logical mismatches, and outliers. Traditional rule-based methods
@@ -16,7 +16,7 @@ errors, validated by a multi-layer confidence scoring system.
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 ai_data_cleaning/
@@ -39,7 +39,7 @@ ai_data_cleaning/
 ├── tests/
 │   └── test_pipeline.py             ← Unit tests
 │
-├── pipeline.py                      ← ⭐ Main entry point — run this
+├── pipeline.py                      ←  Main entry point — run this
 ├── baseline.py                      ← Rule-based baseline for comparison
 ├── evaluate.py                      ← Evaluation & comparison metrics
 ├── requirements.txt
@@ -48,7 +48,7 @@ ai_data_cleaning/
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
@@ -66,7 +66,7 @@ Create a `.env` file in the root directory:
 ```
 OPENAI_API_KEY=your_openai_api_key_here
 ```
-> ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
+>  Never commit your `.env` file. It is already listed in `.gitignore`.
 
 ### 4. Add Your Dataset
 Place your CSV file in the `data/` folder and name it `data_sales.csv`.
@@ -88,20 +88,20 @@ python evaluate.py
 
 ---
 
-## 🔑 Features
+## Features
 
 | Feature | Description |
 |---|---|
-| ✅ Error Detection | Missing values, typos, format issues, duplicates, logical errors, outliers |
-| 🤖 LLM Correction | GPT-4 with zero-shot, few-shot, chain-of-thought, and RAG strategies |
-| 🛡️ Validation | 3-layer validation: format, logical consistency, statistical plausibility |
-| 📊 Confidence Scoring | Auto-apply ≥0.80, flag 0.50–0.79, human review <0.50 |
-| 📈 Evaluation | Precision, Recall, F1 vs rule-based baseline |
-| 🔍 Explainability | SHAP analysis of correction reliability |
+|  Error Detection | Missing values, typos, format issues, duplicates, logical errors, outliers |
+|  LLM Correction | GPT-4 with zero-shot, few-shot, chain-of-thought, and RAG strategies |
+|  Validation | 3-layer validation: format, logical consistency, statistical plausibility |
+|  Confidence Scoring | Auto-apply ≥0.80, flag 0.50–0.79, human review <0.50 |
+|  Evaluation | Precision, Recall, F1 vs rule-based baseline |
+|  Explainability | SHAP analysis of correction reliability |
 
 ---
 
-## 📊 Dataset Columns
+##  Dataset Columns
 
 | Column | Type | Notes |
 |---|---|---|
@@ -120,7 +120,7 @@ python evaluate.py
 
 ---
 
-## 🧪 Running on Google Colab
+##  Running on Google Colab
 
 ```python
 # Cell 1: Clone and setup
@@ -138,5 +138,3 @@ os.environ["OPENAI_API_KEY"] = "your_key_here"
 
 ---
 
-## 📄 License
-MIT License — free to use for academic and research purposes.
