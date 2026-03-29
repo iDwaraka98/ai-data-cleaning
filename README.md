@@ -1,7 +1,6 @@
 # Leveraging Generative AI for Automated Data Cleaning & Error Correction
 
-**Author:** Dwarakamai Illipilla  
-**Degree:** MSc Data Science  
+**Author:** Dwarakamai Illipilla   
 **Dataset:** US Retail Sales Dataset (9,641 records)
 
 ---
